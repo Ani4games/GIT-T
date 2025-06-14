@@ -1,0 +1,400 @@
+/* Base styles (mobile-first) */
+body {
+    background: rgb(0, 0, 0);
+    color: #fff;
+    font-family: sans-serif; /* Add a default font */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+}
+
+/* Universal box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+header {
+    width: 100%;
+    /* Consider a subtle background image or gradient */
+    /* background: url(Background.jpg) no-repeat center center fixed;  */
+    padding: 1rem 0; /* Add vertical padding */
+    text-align: center; /* Center content horizontally */
+    position: relative; /* For potential hamburger icon positioning */
+}
+
+header h1 {
+    margin-top: 1rem; /* Adjust as needed */
+    margin-bottom: 0.5rem;
+    font-size: 2em; /* Responsive font size */
+}
+
+header #Intro {
+    font-size: 1em;
+    padding: 0 1rem; /* Add horizontal padding for readability */
+    margin-bottom: 1rem;
+}
+
+/* Navigation Bar (mobile - hidden by default, revealed by JS) */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column; /* Stack items vertically on mobile */
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background when open */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    text-decoration: none; /* Remove underline from links */
+}
+
+header nav li {
+    padding: 0.8rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    
+}
+header nav li a {
+    color: #fff; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+}
+header nav li:last-child {
+    border-bottom: none;
+}
+
+li:hover {
+    color: aqua;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hamburger menu button (initially visible on mobile) */
+.menu-toggle {
+    display: block; /* Show hamburger on mobile */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+}
+
+/* Hide Bootstrap navbar toggler if not using full Bootstrap navbar */
+.navbar-toggler {
+    display: none;
+}
+
+/* Article Styling */
+#blogs {
+    display: block; /* Default to stacking on mobile */
+    padding: 0.5rem;
+    width: 100%;
+}
+
+#cards {
+    border: solid 1px #fff;
+    width: 90%; /* Default to wider cards on mobile */
+    margin: 0.5rem auto; /* Center cards */
+    box-shadow: 5px 5px 3px #ffffff; /* Adjusted shadow for subtlety */
+    padding: 1rem; /* Add padding inside cards */
+}
+
+#photo {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Make photo container full width of card */
+    border: solid 1px #fff;
+    margin-bottom: 0.5rem;
+}
+
+img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+}
+
+/* Footer Styling */
+footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+footer #first {
+    border: solid #fff;
+    width: 90%;
+    margin: 1rem auto; /* Center footer section */
+    padding: 0.5rem;
+    display: block; /* Stack on mobile */
+}
+
+#communication p {
+    margin-bottom: 0.5rem;
+}
+
+.icon {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space out icons */
+}
+
+.icon i {
+    font-size: 2em; /* Make icons larger */
+}
+
+#photos {
+    border: solid #fff;
+    width: 20%; /* Adjust photo size in comment */
+    margin-right: 10px;
+}
+
+
+/* --- Desktop / Tablet Styles (using min-width media queries) --- */
+@media (min-width: 600px) {
+    /* Header */
+    header {
+        display: flex;
+        flex-direction: column; /* Navbar and title side-by-side or stacked intelligently */
+        justify-content: space-between;
+        align-items: center; /* Vertically align items */
+        padding: 1rem 2rem; /* More padding on larger screens */
+    }
+
+    header h1 {
+        margin: 0; /* Remove margins to align better */
+    }
+
+    header #Intro {
+        position: absolute; /* Position intro text for better layout */
+        left: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40%; /* Adjust width as needed */
+        text-align: left;
+    }
+
+    /* Navigation Bar */
+    header nav ul {
+        display: flex; /* Show navigation links on larger screens */
+        flex-direction: row;
+        position: static; /* Remove absolute positioning */
+        background-color: transparent; /* No background */
+        width: auto;
+        padding: 0;
+    }
+
+    header nav li {
+        padding: 0.5rem 1rem; /* Adjust padding for desktop */
+        border-bottom: none; /* No border on desktop */
+    }
+
+    .menu-toggle {
+        display: none; /* Hide hamburger on desktop */
+    }
+
+    /* Article Styling */
+    #blogs {
+        display: flex; /* Display cards in a row */
+        justify-content: space-around;
+        padding: 1rem;
+    }
+
+    #cards {
+        width: 30%; /* Revert to 30% width */
+        margin: 0.5rem;
+    }
+
+    /* Footer Styling */
+    footer #first {
+        display: flex; /* Revert to flex layout */
+        justify-content: space-between;
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    input[type="text"] {
+        width: 60%; /* Adjust width for desktop */
+        margin: 0.5rem auto;
+    }
+}
+
+/* ... (Your existing mobile-first styles) ... */
+
+/* --- Desktop / Tablet Styles (using min-width media queries) --- */
+@media (min-width: 601px) {
+    /* Header */
+    header {
+        /* Revert to row layout for nav and content side-by-side or structured */
+        
+        flex-direction: column;
+        justify-content: space-between; /* Space out nav and main header content */
+        align-items: center; /* Vertically align items in the header */
+        padding: 1.5rem 3rem; /* More generous padding on larger screens */
+        height: auto; /* Allow header height to adjust to content */
+        position: relative; /* Keep for potential absolute positioning if needed, but we'll try to avoid it for primary elements */
+    }
+
+    header h1 {
+        /* Adjust font size for larger screens */
+        font-size: 2.8em; /* Larger, prominent name */
+        margin: 0; /* Remove default margins to control spacing with padding */
+        text-align: left; /* Align name to the left */
+        flex-shrink: 0; /* Prevent name from shrinking */
+    }
+
+    header #Intro {
+        /* Make intro text flow normally, perhaps as part of a hero section or below the name */
+        position: static; /* Remove absolute positioning */
+        transform: none; /* Remove transform */
+        width: 100%; /* Take full width within its container */
+        max-width: 700px; /* Limit intro text width for readability on very wide screens */
+        margin-left: 2rem; /* Add some space if it's next to the nav or other content */
+        text-align: left; /* Align intro text to the left */
+        font-size: 1.1em; /* Slightly larger font for readability */
+    }
+
+    /* Navigation Bar */
+    header nav {
+        flex-grow: 1; /* Allow navigation to take up available space */
+        display: flex; /* Ensure nav itself is a flex container */
+        justify-content: flex-end; /* Push nav links to the right */
+    }
+
+    header nav ul {
+        display: flex; /* Show navigation links horizontally */
+        flex-direction: row; /* Ensure items are in a row */
+        position: static; /* Remove absolute positioning */
+        background-color: transparent; /* No background */
+        width: auto; /* Let content define width */
+        padding: 0;
+        margin: 0; /* Remove default list margins */
+    }
+
+    header nav li {
+        padding: 0.5rem 1.2rem; /* Adjust padding for desktop links */
+        border-bottom: none; /* No border on desktop */
+        align-self: center; /* Vertically center items in the nav */
+    }
+
+    .menu-toggle {
+        display: none; /* Hide hamburger on desktop/tablet */
+    }
+
+    /* Adjust the overall layout of the header for better flow */
+    header {
+        display: grid; /* Use CSS Grid for more control */
+        grid-template-columns: auto 1fr; /* Name takes auto width, rest takes available space */
+        grid-template-rows: auto auto; /* Name on one row, intro on another (or adjust as needed) */
+        grid-template-areas:
+            "name nav"
+            "intro intro"; /* Example grid areas for flexible layout */
+        gap: 1rem 2rem; /* Row gap, column gap */
+        align-items: start; /* Align items to the start of their grid area */
+    }
+
+    header h1 {
+        grid-area: name;
+        font-size: 3em; /* Even larger for impact */
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    header nav {
+        grid-area: nav;
+        justify-self: end; /* Push navigation to the end (right) */
+        align-self: center; /* Vertically center navigation */
+    }
+
+    header #Intro {
+        grid-area: intro;
+        font-size: 1.2em;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: left;
+        max-width: 100%; /* Let it span the full grid width */
+    }
+
+    /* ... (Your existing article and footer styles for larger screens) ... */
+}
+
+/* Optional: Even larger screens (e.g., 992px or 1200px for true desktop) */
+@media (min-width: 992px) {
+    header {
+        grid-template-columns: auto 1fr auto; /* Name, Intro, Nav */
+        grid-template-rows: auto;
+        grid-template-areas: "name intro nav"; /* All on one row for spacious desktop */
+        align-items: center; /* Vertically center everything */
+        padding: 2rem 5rem; /* More padding */
+    }
+
+    header h1 {
+        font-size: 3.5em; /* Even larger name */
+    }
+
+    header #Intro {
+        margin-left: 3rem; /* More space between name and intro */
+        margin-right: 3rem; /* Space before nav */
+        max-width: 600px; /* Constrain intro width for readability */
+        text-align: left;
+    }
+
+    header nav {
+        justify-self: end;
+    }
+}
+
+/* Add to styling.css */
+body.dark-mode {
+    background: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-mode header {
+    background: linear-gradient(45deg, #111, #444);
+}
+
+body.dark-mode header nav ul {
+    background-color: rgba(26, 26, 26, 0.9);
+}
+
+body.dark-mode li:hover {
+    color: #00ffff; /* Brighter aqua for dark mode */
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode #cards {
+    box-shadow: 5px 5px 3px #000;
+}
+
+body.dark-mode footer #first {
+    border-color: #555;
+}
+
+body.dark-mode #comment_writes {
+    border-color: #555;
+}
+
+body.dark-mode #photos {
+    border-color: #555;
+}
+
+body.dark-mode #comment_container {
+    border-color: #555;
+}
+
+body.dark-mode input[type="text"] {
+    background-color: #333;
+    border-color: #777;
+    color: #f0f0f0;
+}
+
+
+/* Styles for when nav is active (hamburger menu open) */
+#main-nav.active ul {
+    display: flex;
+}
